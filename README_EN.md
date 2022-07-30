@@ -1,14 +1,14 @@
 <div align="center">
-  <h1>Git Bash 主题</h1>
+  <h1>Git Bash Theme</h1>
   <p>
-    <span>语言:&nbsp; </span>
-    <a href="README_CN.md">中文</a>
+    <span>Language:&nbsp; </span>
+    <a href="README.md">中文</a>
     <span> | </span>
-    <a href="README.md">English</a>
+    <a href="README_EN.md">English</a>
   </p>
 </div>
 
-<h2>成果预览</h2>
+<h2>Show Time</h2>
 
 > In a Git Repository
 
@@ -18,8 +18,8 @@
 
 ![image](https://user-images.githubusercontent.com/44220311/181911136-a79659b2-d4fa-4654-a5cf-109594bd4ebc.png)
 
-<h2>食用方法</h2>
+<h2>How to use</h2>
 
-**复制etc和mingw64两个文件夹到你的Git安装目录即可**
+**Copy the etc and mingw64 folders to your Git installation directory**
 
-**覆盖原本的文件, 我建议你对原本的文件做好备份**
+**Overwrite the original file, I suggest you make a backup of the original file**

@@ -20,6 +20,6 @@
 
 <h2>How to use</h2>
 
-**Copy the etc and mingw64 folders to your Git installation directory**
+**Copy the *etc* and *mingw64* folders to your Git installation directory**
 
 **Overwrite the original file, I suggest you make a backup of the original file**

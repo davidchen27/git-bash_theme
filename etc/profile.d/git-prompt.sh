@@ -1,29 +1,27 @@
+# 终端打印结构美化 Start
 if test -f ~/.config/git/git-prompt.sh
 then
 	. ~/.config/git/git-prompt.sh
 else
-	PS1="\[\033]0;David's Workstation\007\]" # set window title
-	PS1="$PS1"'\n'                 # new line
-	PS1="$PS1"'\[\033[35m\]'
-	PS1="$PS1"'┌'
-	PS1="$PS1"'\[\033[32m\]'       # change to green
-	PS1="$PS1"' @\u '             # user@host<space>
-	PS1="$PS1"'\[\033[35m\]'       # change to purple
-	#PS1="$PS1"'$MSYSTEM '          # show MSYSTEM
-	PS1="$PS1"'\[\033[35m\]'
-	PS1="$PS1"'in '
-	PS1="$PS1"'\[\033[33m\]'       # change to brownish yellow
-	PS1="$PS1"'\W'                 # current working directory
-	PS1="$PS1"'\[\033[35m\]'
-	PS1="$PS1"' at '
-	PS1="$PS1"'\[\033[36m\]'
-	PS1="$PS1"'[\@]'
+	PS1="\[\033]0;David's Workstation\007\]"  # 设置终端打开后的标题
+	PS1="$PS1"'\n'
+	PS1="$PS1"'\[\033[35m\]'                  # 粉紫色
+	PS1="$PS1"'┌'                             # 第一个字符, 与第二行的└◥配合表现出相连的样子
+	PS1="$PS1"'\[\033[32m\]'                  # 亮绿色
+	PS1="$PS1"' @\u '                         # 主机用户名 user@host<space>
+	PS1="$PS1"'\[\033[35m\]'                  # 粉紫色
+	PS1="$PS1"'in '                           # in
+	PS1="$PS1"'\[\033[33m\]'                  # 亮黄色
+	PS1="$PS1"'\W'                            # 当前工作目录
+	PS1="$PS1"'\[\033[35m\]'                  # 粉紫色
+	PS1="$PS1"' at '                          # at
+	PS1="$PS1"'\[\033[36m\]'                  # 亮青色
+	PS1="$PS1"'[\@]'                          # 显示当前时间
 	isGit="$(git rev-parse --is-inside-work-tree 2>/dev/null)"
-	if [ "$isGit" = "true" ]
+	if [ "$isGit" = "true" ]                  # 如果当前目录是Git目录
 	then
-	PS1="$PS1"'\[\033[35m\]'
-	#PS1="$PS1"' on'
-	PS1="$PS1"' ▧▧▷'
+	PS1="$PS1"'\[\033[35m\]'                  # 粉紫色
+	PS1="$PS1"' ▧▧▷'                          # 显示Git图标
 	fi
 	if test -z "$WINELOADERNOEXEC"
 	then
@@ -35,14 +33,15 @@ else
 		then
 			. "$COMPLETION_PATH/git-completion.bash"
 			. "$COMPLETION_PATH/git-prompt.sh"
-			PS1="$PS1"'\[\033[31m\]'  # change color to cyan
-			PS1="$PS1"'`__git_ps1`'   # bash function
+			PS1="$PS1"'\[\033[31m\]'              # 亮红色
+			PS1="$PS1"'`__git_ps1`'               # 打印调用__git_ps1函数返回值, 即分支信息
 		fi
 	fi
-	PS1="$PS1"'\[\033[0m\]'        # change color
-	PS1="$PS1"' ✘\n'                 # new line
-	PS1="$PS1"'\[\033[35m\]└◥\[\033[0m\] '                 # prompt: always $
+	PS1="$PS1"'\[\033[0m\]'                   # 重置颜色
+	PS1="$PS1"' ✘\n'                         # 当前行结束符 + 换行
+	PS1="$PS1"'\[\033[35m\]└◥\[\033[0m\] '    # 第二行结束符
 fi
+# 终端打印结构美化 End
 
 MSYS2_PS1="$PS1"               # for detection by MSYS2 SDK's bash.basrc
 

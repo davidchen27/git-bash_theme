@@ -349,7 +349,7 @@ __git_ps1 ()
 	local detached=no
 	local ps1pc_start='\u@\h:\w '
 	local ps1pc_end='\$ '
-	local printf_format=' \033[32m(\033[31mઇ \33[4m%s\33[0m \033[31mଓ\033[32m)'
+	local printf_format=' \033[32m(\033[31mઇ \33[4m%s\33[0m \033[31mଓ\033[32m)' # 最终的Git仓库打印信息
 
 	case "$#" in
 		2|3)	pcmode=yes
